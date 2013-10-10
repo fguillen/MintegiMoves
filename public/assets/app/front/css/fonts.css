@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Lusitana|Oswald);
+
+body, .font_normal {
+  font-family: 'Lusitana', serif;
+}
+
+.font_title {
+  font-family: 'Oswald', sans-serif;
+}

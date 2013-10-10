@@ -1,0 +1,145 @@
+#item_form .pics .list > ul {
+  margin: 0;
+}
+
+#item_form .pics .list > ul > li {
+  float: left;
+  list-style: none;
+  line-height: 15px;
+}
+
+#item_form .pics {
+  clear: both;
+  overflow: hidden;
+}
+
+/* size */
+#item_form .pics .item,
+#item_form .pics .drop-wrapper,
+#item_form .pics .drop-wrapper .drop,
+#item_form .pics .drop-wrapper .drop-message,
+#item_form .pics .item .image,
+#item_form .pics .item .state,
+#item_form .pics .item .progress,
+#item_form .pics .placeholder {
+  width: 303px;
+  height: 203px;
+}
+
+#item_form .pics .drop-wrapper,
+#item_form .pics .placeholder,
+#item_form .pics .item {
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#item_form .pics .placeholder{
+  box-sizing: border-box;
+  border: 3px dashed #ccc;
+  float: left;
+}
+
+#item_form .pics .drop-wrapper {
+  float: left;
+}
+
+#item_form .pics .drop-wrapper .drop {
+  position: absolute;
+  top: 0;
+  lef: 0;
+  box-sizing: border-box;
+  border: 4px dashed #ccc;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 100;
+}
+
+#item_form .pics .drop-wrapper .drop-message {
+  position: absolute;
+  top: 0;
+  lef: 0;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#item_form .pics .drop.bbimagesupload-over {
+  border-color: black;
+}
+
+#item_form .pics .item .image {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#item_form .pics .item .state {
+  box-sizing: border-box;
+  height: 25px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+#item_form .pics .item .progress {
+  height: 16px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+}
+
+#item_form .pics .item .progress .progress-bar {
+  background: transparent url("/assets/app/admin/img/loading.gif") repeat left center;
+  height: 16px;
+  width: 100px;
+}
+
+#item_form .pics .item.uploading .state {
+  display: none;
+}
+
+#item_form .pics .item:not(.uploading) .progress {
+  display: none;
+}
+
+#item_form .pics .item:not(.uploading) .state {
+  display: block;
+}
+#item_form .pics .item .controls {
+  display: none;
+  width: 17px;
+  height: 17px;
+  padding: 3px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  right: -7px;
+  top: -7px;
+}
+
+#item_form .pics .item:hover .controls {
+  display: block;
+}
+
+#item_form .pics .item .controls img {
+  width: 16px;
+}
+
+#item_form .pics .item .controls a {
+  color: white;
+  text-decoration: none;
+}

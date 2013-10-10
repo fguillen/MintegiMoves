@@ -1,0 +1,13 @@
+<div class="row item">
+  <div class="col-md-4">
+    <% if !item.pics.empty? %>
+      <%= image_tag item.pics.first.attach(:front), :style => "width: 100%" %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <h3 class="font_title">
+      <%= link_to item.title, [:front, item.category, item] %>
+    </h3>
+    <%= item.text.truncate(150).to_md %>
+  </div>
+</div>

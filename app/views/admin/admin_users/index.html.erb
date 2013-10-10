@@ -1,0 +1,21 @@
+<% title "AdminUsers" %>
+
+<p><%= link_to "New Admin User", new_admin_admin_user_path, :class => "btn btn-default" %></p>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th class="col-lg-1">Id</th>
+    <th class="col-lg-2">Name</th>
+    <th class="col-lg-2">Email</th>
+    <th class="col-lg-2">Created At</th>
+  </tr>
+
+  <% @admin_users.each do |admin_user| %>
+    <tr>
+      <td><%= link_to admin_user.id, [:admin, admin_user] %></td>
+      <td><%= admin_user.name %></td>
+      <td><%= admin_user.email %></td>
+      <td><%= admin_user.created_at.to_s(:datetimedb) %></td>
+    </tr>
+  <% end %>
+</table>

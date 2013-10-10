@@ -1,0 +1,21 @@
+<div id="menu">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex6-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex6-collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <% Category.by_position.each do |category| %>
+          <li><%= link_to category.title, [:front, category] %></li>
+        <% end %>
+        <li><%= link_to "Contacto", front_page_path("contact") %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+</div>

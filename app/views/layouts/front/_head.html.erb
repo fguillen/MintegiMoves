@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+
+<title>MintegiMoves | <%= content_for?(:title) ? yield(:title) : "" %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="/assets/app/shared/skull.png">
+
+<meta name="description" content="MintegiMoves official website">
+<meta name="keywords" content="MintegiMoves">
+<meta http-equiv="content-language" content="en">
+
+<meta name="copyright" content="MintegiMoves">
+<meta name="author" content="MintegiMoves">
+<meta name="Distribution" content="Global">
+<meta name="Rating" content="General">
+<meta name="Robots" content="INDEX,FOLLOW">
+
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.ui.js" %>
+<%= javascript_include_tag "/assets/vendor/rails/jquery_ujs.js" %>
+<%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
+
+<!-- bootstrap -->
+<%= javascript_include_tag "/assets/vendor/bootstrap/js/bootstrap.min.js" %>
+<%= stylesheet_link_tag "/assets/vendor/bootstrap/css/bootstrap.min.css" %>
+
+<!-- nito-slider -->
+<%= javascript_include_tag "/assets/vendor/nivo-slider/jquery.nivo.slider.js" %>
+<%= stylesheet_link_tag "/assets/vendor/nivo-slider/nivo-slider.css" %>
+<%= stylesheet_link_tag "/assets/vendor/nivo-slider/themes/default/default.css" %>
+
+<!-- application -->
+<%= stylesheet_link_tag "/assets/app/front/css/front.css", :media => "all" %>
+<%= stylesheet_link_tag "/assets/app/front/css/fonts.css", :media => "all" %>
+<%= javascript_include_tag "/assets/app/front/js/front.js" %>
+
+<%= csrf_meta_tag %>
+<%= yield(:head) %>

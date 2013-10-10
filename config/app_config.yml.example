@@ -1,0 +1,35 @@
+development:
+  host: "localhost:3000"
+  admin_email: "fguillen.mail@gmail.com"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "mintegi_moves.org"
+    user: "user"
+    pass: "pass"
+
+test:
+  host: "test.com"
+  admin_email: "mintegi_moves.mail@email.com"
+
+  smtp:
+    enabled: false
+
+production:
+  host: "mintegi_moves.org"
+  admin_email: "fguillen.mail@gmail.com"
+
+  s3_credentials:
+    bucket: "mintegi_moves_production"
+    access_key_id: "KEY"
+    secret_access_key: "SECRET"
+
+  smtp:
+    enabled: true
+    server: "smtp.mandrillapp.com"
+    port: 587
+    domain: "mintegi_moves.org"
+    user: "user"
+    pass: "pass"

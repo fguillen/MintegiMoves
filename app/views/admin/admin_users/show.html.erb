@@ -1,0 +1,12 @@
+<% title "AdminUser > #{@admin_user.name}" %>
+
+<dl class="dl-horizontal">
+  <dt>Id</dt><dd><%= @admin_user.id %></dd>
+  <dt>Name</dt><dd><%= @admin_user.name %></dd>
+  <dt>Email</dt><dd><%= @admin_user.email %></dd>
+</dl>
+
+<p>
+  <%= link_to "Edit", edit_admin_admin_user_path(@admin_user) %> |
+  <%= link_to "Destroy", [:admin, @admin_user], :confirm => "Are you sure?", :method => :delete %>
+</p>

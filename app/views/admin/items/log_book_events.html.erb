@@ -1,0 +1,4 @@
+<% title "Item > #{@item.title} > LogBook Events" %>
+
+<%= render :partial => "admin/items/menu", :locals => { :item => @item } %>
+<%= render :partial => "admin/log_book_events/list", :locals => { :log_book_events => @log_book_events } %>

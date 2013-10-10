@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/front/head" %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <%= render "layouts/front/header" %>
+
+      <div id="content" class="container">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render "layouts/front/footer" %>
+    <%= render "shared/analytics" %>
+  </body>
+</html>
+

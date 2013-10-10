@@ -1,0 +1,40 @@
+/* bootstrap tricks */
+
+/* for the bottom fixed nav bar */
+body { padding-bottom: 70px; }
+
+/* remove nav bar border radious */
+.navbar{
+   -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;
+}
+
+/* General */
+a, a:hover {
+  color: black;
+}
+
+/* header */
+
+#header .navbar-default{
+  border-width: 2px 0px;
+  border-color: black;
+}
+
+#header h1 {
+  font-size: 60px;
+  margin-top: 110px;
+}
+
+#header img {
+  width: 320px;
+}
+
+#header #menu a {
+  font-size: 20px;
+}
+
+/* Items index */
+#items_index .thumbnail {
+  height: 550px;
+  margin-bottom: 20px;
+}

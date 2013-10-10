@@ -1,0 +1,31 @@
+<% title "Category > #{@category.title}" %>
+
+<% if !@category.pics.empty? %>
+  <div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider">
+      <% @category.pics.each do |pic| %>
+        <%= image_tag pic.attach(:slider) %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2><%= @category.title %></h2>
+    <%= @category.text.to_md %>
+  </div>
+  <div class="col-md-8">
+    <% @items.each do |item| %>
+      <%= render :partial => "front/items/item", :locals => { :item => item } %>
+    <% end %>
+  </div>
+</div>
+
+<% if !@category.pics.empty? %>
+  <script>
+    $(function() {
+        $("#slider").nivoSlider();
+    });
+  </script>
+<% end %>

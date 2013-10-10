@@ -1,0 +1,11 @@
+
+<div class="container">
+  <div class="row">
+    <div id="choose-locale" class="span4">
+      <ul class="nav nav-pills">
+        <li class="<%= "disabled" if( I18n.locale == :en ) %>"><%= link_to "English", url_for( params.merge( :locale => :en ) ) %></li>
+        <li class="<%= "disabled" if( I18n.locale == :es ) %>"><%= link_to "Español", url_for( params.merge( :locale => :es ) ) %></li>
+      </ul>
+    </div>
+  </div>
+</div>

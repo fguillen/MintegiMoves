@@ -1,0 +1,5 @@
+<% title "Edit Item > #{@item.title}" %>
+<div id="item_form">
+  <%= render "form" %>
+  <%= render :partial => "form_pics", :item => @item %>
+</div>

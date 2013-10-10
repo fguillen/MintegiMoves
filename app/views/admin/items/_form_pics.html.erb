@@ -1,0 +1,42 @@
+<div class="pics">
+  <h2>Pics</h2>
+  <script type="text/template" id="template_image">
+    <div class="item {{state}}">
+      <div class="image" style="background-image: url( '{{file_url}}' )"></div>
+      <div class="controls">
+        <a href="#delete" class="delete"><img src="/assets/app/admin/img/delete.png" /></a>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/template" id="template_image_uploading">
+    <div class="item {{state}}">
+      <div class="image" style="background-image: url( '{{file_url}}' )"></div>
+      <div class="progress"><div class="progress-bar" style="width:{{progress}}%"></div></div>
+      <div class="state">{{state}}</div>
+    </div>
+  </script>
+
+  <div class="list">
+  </div>
+
+  <div class="drop-wrapper">
+    <div class="drop"></div>
+    <div class="drop-message">Drop image files here</div>
+  </div>
+
+  <script>
+    $(function(){
+      new BBAssetsUpload({
+        url: "<%= admin_item_pics_path(@item.id) %>",
+        listElement: $("#item_form .pics .list"),
+        dropElement: $("#item_form .pics .drop"),
+        assetTemplate: $("#template_image").html(),
+        assetUploadingTemplate: $("#template_image_uploading").html(),
+        maxFileSize: 500,
+        acceptFileTypes: "jpg, jpeg, png",
+        onSuccess: function( asset ) { console.log( "asset", asset ) },
+      });
+    });
+  </script>
+</div><!-- pics -->

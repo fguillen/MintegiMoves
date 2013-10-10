@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/assets/app/shared/skull.png">
+
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.js" %>
+<%= javascript_include_tag "/assets/vendor/jquery/jquery.ui.js" %>
+<%= javascript_include_tag "/assets/vendor/rails/jquery_ujs.js" %>
+<%= stylesheet_link_tag "/assets/vendor/etc/reset.css" %>
+<%= javascript_include_tag "/assets/vendor/etc/ajax.loading.js" %>
+<%= javascript_include_tag "/assets/vendor/etc/ajax.logger.js" %>
+<%= javascript_include_tag "/assets/vendor/etc/jquery.ui.table.sortable.extension.js" %>
+
+<!-- bootstrap -->
+<%= javascript_include_tag "/assets/vendor/bootstrap/js/bootstrap.min.js" %>
+<%= stylesheet_link_tag "/assets/vendor/bootstrap/css/bootstrap.min.css" %>
+
+<!-- FontAwesome -->
+<%= stylesheet_link_tag "/assets/vendor/font_awesome/css/font-awesome.css" %>
+
+<!-- MDMagic : MarkDown editor for text fields -->
+<%= javascript_include_tag "/assets/vendor/mdmagick/vendor/a-tools.js" %>
+<%= javascript_include_tag "/assets/vendor/mdmagick/vendor/showdown.js" %>
+<%= javascript_include_tag "/assets/vendor/mdmagick/lib/mdmagick.js" %>
+<%= stylesheet_link_tag "/assets/vendor/mdmagick/assets/mdmagick.css" %>
+<%= stylesheet_link_tag "/assets/vendor/mdmagick/assets/icon_font/style.css" %>
+
+<!-- BBAssetsUpload -->
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/underscore.js" %>
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/backbone.js" %>
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/jquery.upload.js" %>
+<%= javascript_include_tag "/assets/vendor/bbassetsupload/bbassetsupload.js" %>
+
+<!-- NiceFileField -->
+<%= javascript_include_tag "/assets/vendor/etc/nice_file_field.js" %>
+
+<!-- application -->
+<%= stylesheet_link_tag "/assets/app/admin/css/admin.css", :media => "all" %>
+<%= stylesheet_link_tag "/assets/app/admin/css/image_upload.css", :media => "all" %>
+<%= javascript_include_tag "/assets/app/admin/js/admin.js" %>
+
+<%= csrf_meta_tag %>
+<%= yield(:head) %>
