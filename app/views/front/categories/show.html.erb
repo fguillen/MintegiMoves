@@ -3,7 +3,7 @@
 <% if !@category.pics.empty? %>
   <div class="slider-wrapper theme-default">
     <div id="slider" class="nivoSlider">
-      <% @category.pics.each do |pic| %>
+      <% @category.pics.by_position.each do |pic| %>
         <%= image_tag pic.attach(:slider) %>
       <% end %>
     </div>

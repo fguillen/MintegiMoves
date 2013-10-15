@@ -1,7 +1,7 @@
 <div class="pics">
   <h2>Pics</h2>
   <script type="text/template" id="template_image">
-    <div class="category {{state}}">
+    <div class="item {{state}}">
       <div class="image" style="background-image: url( '{{file_url}}' )"></div>
       <div class="controls">
         <a href="#delete" class="delete"><img src="/assets/app/admin/img/delete.png" /></a>
@@ -10,7 +10,7 @@
   </script>
 
   <script type="text/template" id="template_image_uploading">
-    <div class="category {{state}}">
+    <div class="item {{state}}">
       <div class="image" style="background-image: url( '{{file_url}}' )"></div>
       <div class="progress"><div class="progress-bar" style="width:{{progress}}%"></div></div>
       <div class="state">{{state}}</div>
@@ -29,8 +29,8 @@
     $(function(){
       new BBAssetsUpload({
         url: "<%= admin_category_pics_path(@category.id) %>",
-        listElement: $("#category_form .pics .list"),
-        dropElement: $("#category_form .pics .drop"),
+        listElement: $("#item_form .pics .list"),
+        dropElement: $("#item_form .pics .drop"),
         assetTemplate: $("#template_image").html(),
         assetUploadingTemplate: $("#template_image_uploading").html(),
         maxFileSize: 500,

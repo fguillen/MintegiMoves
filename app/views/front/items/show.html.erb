@@ -12,10 +12,10 @@
   </div>
   <div class="col-md-8">
     <ul>
-      <% @item.pics.each do |pic| %>
+      <% @item.pics.by_position.each do |pic| %>
         <li>
           <%= image_tag pic.attach(:front_big) %>
-          <p><%= pic.title %></p>
+          <!-- <p><%= pic.title %></p> -->
         </li>
       <% end %>
     </ul>
