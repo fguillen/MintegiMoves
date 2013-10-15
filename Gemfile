@@ -25,6 +25,10 @@ group :development do
   gem "capistrano"
 end
 
+group :production do
+  gem "mysql2"
+end
+
 group :test do
   gem "mocha", :require => false
   gem "factory_girl"
