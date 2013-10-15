@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs">
+  <li class="<%= admin_menu_class(:category_info) %>">
+    <%= link_to "Info", [:admin, category] %>
+  </li>
+
+  <li class="<%= admin_menu_class(:category_items) %>">
+    <%= link_to admin_items_path(:category_id => category.id) do %>
+      Items
+      <span class="badge"><%= category.items.count %></span>
+    <% end %>
+  </li>
+
+  <li class="<%= admin_menu_class(:category_log_book_events) %>">
+    <%= link_to log_book_events_admin_category_path(category) do %>
+      LogBook Events
+      <span class="badge"><%= category.log_book_events.count %></span>
+    <% end %>
+  </li>
+</ul>

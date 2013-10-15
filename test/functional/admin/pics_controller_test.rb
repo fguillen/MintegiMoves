@@ -7,8 +7,8 @@ class Admin::PicsControllerTest < ActionController::TestCase
 
   def test_index
     item = FactoryGirl.create(:item)
-    pic_1 = FactoryGirl.create(:pic, :item => item, :attach => File.new(fixture("/pic.jpg")), :position => 1)
-    pic_2 = FactoryGirl.create(:pic, :item => item, :attach => File.new(fixture("/pic.jpg")), :position => 2)
+    pic_1 = FactoryGirl.create(:pic, :picable => item, :attach => File.new(fixture("/pic.jpg")), :position => 1)
+    pic_2 = FactoryGirl.create(:pic, :picable => item, :attach => File.new(fixture("/pic.jpg")), :position => 2)
 
     get(:index, :item_id => item)
 
@@ -36,7 +36,7 @@ class Admin::PicsControllerTest < ActionController::TestCase
 
   def test_destroy
     item = FactoryGirl.create(:item)
-    pic = FactoryGirl.create(:pic, :item => item)
+    pic = FactoryGirl.create(:pic, :picable => item)
 
     assert_difference "Pic.count", -1 do
       delete(
@@ -55,9 +55,9 @@ class Admin::PicsControllerTest < ActionController::TestCase
 
   def test_reorder
     item = FactoryGirl.create(:item)
-    pic_1 = FactoryGirl.create(:pic, :position => 1, :item => item)
-    pic_2 = FactoryGirl.create(:pic, :position => 2, :item => item)
-    pic_3 = FactoryGirl.create(:pic, :position => 3, :item => item)
+    pic_1 = FactoryGirl.create(:pic, :position => 1, :picable => item)
+    pic_2 = FactoryGirl.create(:pic, :position => 2, :picable => item)
+    pic_3 = FactoryGirl.create(:pic, :position => 3, :picable => item)
 
     item.reload
     assert_equal([pic_1, pic_2, pic_3].map(&:id), item.pics.by_position.map(&:id))

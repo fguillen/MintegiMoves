@@ -1,9 +1,14 @@
 <% title "Item > #{@item.title}" %>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 item show">
     <h2 class="font_title"><%= @item.title %></h2>
-    <%= @item.text.to_md %>
+    <div class="intro">
+      <%= @item.text.to_md %>
+    </div>
+    <div class="text">
+      <%= @item.text.to_md %>
+    </div>
   </div>
   <div class="col-md-8">
     <ul>

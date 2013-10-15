@@ -10,12 +10,12 @@ class PicTest < ActiveSupport::TestCase
 
     pic =
       Pic.create!(
-        :item => item,
+        :picable => item,
         :attach => File.open(fixture("pic.jpg")),
       )
 
-    assert_match(/\/assets\/uploads\/test\/1001\/#{pic.id}_front.jpg/, pic.attach(:front))
-    assert_match(/\/assets\/uploads\/test\/1001\/#{pic.id}_admin.jpg/, pic.attach(:admin))
+    assert_match(/\/assets\/uploads\/test\/item\/1001\/#{pic.id}_front.jpg/, pic.attach(:front))
+    assert_match(/\/assets\/uploads\/test\/item\/1001\/#{pic.id}_admin.jpg/, pic.attach(:admin))
   end
 
   def test_scope_by_position

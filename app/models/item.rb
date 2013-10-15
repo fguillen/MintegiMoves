@@ -9,7 +9,8 @@ class Item < ActiveRecord::Base
 
   before_validation :initialize_position
 
-  validates :title, :presence => true, :uniqueness => true
+  validates :title, :presence => true
+  validates :intro, :presence => true
   validates :text, :presence => true
   validates :position, :presence => true
   validates :category_id, :presence => true

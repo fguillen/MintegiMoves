@@ -1,0 +1,4 @@
+<% title "Category > #{@category.title} > LogBook Events" %>
+
+<%= render :partial => "admin/categories/menu", :locals => { :category => @category } %>
+<%= render :partial => "admin/log_book_events/list", :locals => { :log_book_events => @log_book_events } %>

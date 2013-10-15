@@ -9,6 +9,7 @@ FactoryGirl.define do
   factory :item do
     category
     sequence(:title) { |n| "Item Title #{n}" }
+    intro "The Intro"
     text "The text"
   end
 
@@ -18,7 +19,7 @@ FactoryGirl.define do
   end
 
   factory :pic do
-    association :item
+    association :picable, :factory => :item
     attach { File.new("#{Rails.root}/test/fixtures/pic.jpg") }
   end
 

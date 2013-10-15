@@ -1,0 +1,5 @@
+<% title "Category > #{@category.title}" %>
+
+<%= render :partial => "admin/categories/menu", :locals => { :category => @category } %>
+<%= render :partial => "admin/categories/info", :locals => { :category => @category } %>
+

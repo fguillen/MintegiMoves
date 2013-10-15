@@ -2,9 +2,10 @@ require "test_helper"
 
 class Front::ItemsControllerTest < ActionController::TestCase
   def test_show
-    item = FactoryGirl.create(:item)
+    category = FactoryGirl.create(:category)
+    item = FactoryGirl.create(:item, :category => category)
 
-    get :show, :id => item
+    get :show, :category_id => category, :id => item
 
     assert :success
     assert_template "front/items/show"

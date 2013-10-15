@@ -1,8 +1,8 @@
-<%= form_for [:admin, @item], :html => { :class => "form-horizontal" } do |f| %>
+<%= form_for [:admin, @category], :html => { :class => "form-horizontal" } do |f| %>
   <%= render "/shared/form_errors", :object => f.object %>
 
   <fieldset>
-    <legend><%= "Item attributes" %></legend>
+    <legend><%= "Category attributes" %></legend>
 
     <div class="form-group">
       <%= f.label :title, :class => "col-lg-2 control-label" %>
@@ -12,23 +12,9 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :intro, :class => "col-lg-2 control-label" %>
-      <div class="col-lg-10">
-        <%= f.text_area :intro, :class => "form-control mdm-input", :rows => "3" %>
-      </div>
-    </div>
-
-    <div class="form-group">
       <%= f.label :text, :class => "col-lg-2 control-label" %>
       <div class="col-lg-10">
         <%= f.text_area :text, :class => "form-control mdm-input" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :category_id, :class => "col-lg-2 control-label" %>
-      <div class="col-lg-10">
-        <%= f.select(:category_id, Category.all.collect { |e| [ e.title, e.id ] }, {}, { :class => "form-control" }) %>
       </div>
     </div>
 

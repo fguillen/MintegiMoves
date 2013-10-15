@@ -6,13 +6,31 @@ class Admin::ItemsControllerTest < ActionController::TestCase
   end
 
   def test_index
-    item_1 = FactoryGirl.create(:item)
-    item_2 = FactoryGirl.create(:item)
+    category_1 = FactoryGirl.create(:category)
+    category_2 = FactoryGirl.create(:category)
+
+    item_1 = FactoryGirl.create(:item, :category => category_1)
+    item_2 = FactoryGirl.create(:item, :category => category_1)
+    item_3 = FactoryGirl.create(:item, :category => category_2)
 
     get :index
 
     assert_template "admin/items/index"
     assert_equal([item_2, item_1].ids, assigns(:items).ids)
+  end
+
+  def test_index_with_category_id_param
+    category_1 = FactoryGirl.create(:category)
+    category_2 = FactoryGirl.create(:category)
+
+    item_1 = FactoryGirl.create(:item, :category => category_1)
+    item_2 = FactoryGirl.create(:item, :category => category_1)
+    item_3 = FactoryGirl.create(:item, :category => category_2)
+
+    get :index, :category_id => category_2.id
+
+    assert_template "admin/items/index"
+    assert_equal([item_3].ids, assigns(:items).ids)
   end
 
   def test_show
@@ -40,11 +58,15 @@ class Admin::ItemsControllerTest < ActionController::TestCase
   end
 
   def test_create_valid
+    category = FactoryGirl.create(:category)
+
     post(
       :create,
       :item => {
         :title => "Item Title",
-        :text => "My **text**"
+        :intro => "Intro **text**",
+        :text => "My **text**",
+        :category_id => category
       }
     )
 
@@ -52,6 +74,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_redirected_to [:admin, item]
 
     assert_equal("Item Title", item.title)
+    assert_equal("Intro **text**", item.intro)
     assert_equal("My **text**", item.text)
   end
 

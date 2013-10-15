@@ -1,5 +1,5 @@
 MintegiMoves::Application.routes.draw do
-  root :to => "front/categories#show", :id => Category.find_by_title("Cursos").id
+  root :to => "front/categories#show", :id => 1
 
   namespace :front do
     resources :pages, :only => [:show]
@@ -21,6 +21,14 @@ MintegiMoves::Application.routes.draw do
 
     resources :log_book_events, :only => [:index]
     resources :admin_users
+
+    resources :categories, :only => [:show, :edit, :update] do
+      get :log_book_events, :on => :member
+      resources :pics, :only => [:index, :create, :destroy] do
+        post :reorder, :on => :collection
+      end
+    end
+
     resources :items do
       get :log_book_events, :on => :member
       post :reorder, :on => :collection

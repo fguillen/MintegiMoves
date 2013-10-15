@@ -8,7 +8,7 @@ ActiveRecord::Base.transaction do
         :text => Faker::Lorem.paragraphs.join("\n")
       )
 
-    rand(2).times do |index|
+    rand(1..2).times do |index|
       category.pics.create!(
         :attach => File.open("#{Rails.root}/test/fixtures/pic.jpg")
       )
@@ -21,7 +21,8 @@ ActiveRecord::Base.transaction do
   20.times do |index|
     item =
       Item.create!(
-        :title => "#{Faker::Lorem.sentence} – #{index}",
+        :title => Faker::Lorem.sentence,
+        :intro => Faker::Lorem.sentence,
         :text => Faker::Lorem.paragraphs.join("\n"),
         :category => Category.all.sample
       )

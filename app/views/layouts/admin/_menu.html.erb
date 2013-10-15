@@ -20,8 +20,18 @@
         <li class="dropdown <%= admin_menu_class(:items) %>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Items <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "List", :admin_items %></li>
-            <li><%= link_to "New", :new_admin_item %></li>
+            <% Category.all.each do |category| %>
+              <li><%= link_to category.title, admin_items_path(:category_id => category.id) %></li>
+            <% end %>
+          </ul>
+        </li>
+
+        <li class="dropdown <%= admin_menu_class(:items) %>">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% Category.all.each do |category| %>
+              <li><%= link_to category.title, [:admin, category] %></li>
+            <% end %>
           </ul>
         </li>
 

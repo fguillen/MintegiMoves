@@ -3,7 +3,8 @@ class Admin::ItemsController < Admin::AdminController
   before_filter :load_item, :only => [:show, :edit, :update, :destroy, :log_book_events]
 
   def index
-    @items = Item.by_position.paginate(:page => params[:page], :per_page => 10)
+    @category = params[:category_id] ? Category.find(params[:category_id]) : Category.first
+    @items = Item.by_position.where(:category_id => @category.id)
   end
 
   def show
@@ -20,7 +21,7 @@ class Admin::ItemsController < Admin::AdminController
       redirect_to [:admin, @item], :notice => "Successfully created Item."
     else
       flash.now[:alert] = "Some error trying to create item."
-      render :action => 'new'
+      render :action => :new
     end
   end
 
@@ -33,7 +34,7 @@ class Admin::ItemsController < Admin::AdminController
       redirect_to [:admin, @item], :notice  => "Successfully updated Item."
     else
       flash.now[:alert] = "Some error trying to update Item."
-      render :action => 'edit'
+      render :action => :edit
     end
   end
 
