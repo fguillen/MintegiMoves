@@ -17,12 +17,49 @@ a, a:hover {
   color: black;
 }
 
+/* Nivo slider */
+
+.theme-default .nivoSlider {
+  box-shadow: 0px 0px 0px 0px #4a4a4a;
+}
+
 /* header */
 
-#header .navbar-default{
-  border-width: 2px 0px;
-  border-color: black;
+#header ul#applications {
+  margin: 80px 10px 80px 80px;
+  font-size: 10px;
+  text-align: justify;
+  line-height: 20px;
 }
+
+#header #applications li {
+  display: inline;
+  text-transform:uppercase;
+
+}
+
+#header #applications li.important {
+  font-weight: bold;
+  color: black !important;
+  font-size: 9px;
+}
+
+/*#header #applications li:before {
+content: "| ";
+}
+*/
+
+#header #applications li:nth-child(odd) {
+  color: red;
+}
+
+
+#header .navbar-default{
+  border-width: 1px 0px;
+  border-color: rgb(165, 165, 165);
+  min-height: 0px;
+}
+
 
 #header h1 {
   font-size: 60px;
@@ -34,7 +71,16 @@ a, a:hover {
 }
 
 #header #menu a {
-  font-size: 20px;
+  padding: 0px 15px;
+  font-size: 14px;
+  /*color: red;*/
+  color: rgb(114, 113, 113);
+  text-transform: uppercase;
+}
+
+#header #menu a:hover {
+  text-decoration: underline;
+  color: black;
 }
 
 /* Items index */

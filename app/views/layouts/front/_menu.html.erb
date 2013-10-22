@@ -10,7 +10,7 @@
     </div>
 
     <div class="collapse navbar-collapse navbar-ex6-collapse navbar-right">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav font_title">
         <% Category.by_position.each do |category| %>
           <li><%= link_to category.title, [:front, category] %></li>
         <% end %>
