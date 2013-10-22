@@ -117,3 +117,9 @@ content: "| ";
 #map_canvas {
   height: 300px;
 }
+
+/* contact */
+
+#pages_contact h1 {
+  font-size: 20px;
+}
