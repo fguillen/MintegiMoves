@@ -1,7 +1,7 @@
 <div class="row item index">
   <div class="col-md-4">
     <% if !item.pics.empty? %>
-      <%= image_tag item.pics.first.attach(:front), :style => "width: 100%" %>
+      <%= image_tag item.pics.by_position.first.attach(:front), :style => "width: 100%" %>
     <% end %>
   </div>
   <div class="col-md-8">
