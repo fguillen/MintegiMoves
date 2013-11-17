@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
   strip_attributes
   log_book
 
-  has_many :pics, :as => :picable
+  has_many :pics, :as => :picable, :dependent => :destroy
   belongs_to :category
 
   attr_protected nil

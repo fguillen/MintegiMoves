@@ -2,8 +2,8 @@ class Category < ActiveRecord::Base
   strip_attributes
   log_book
 
-  has_many :pics, :as => :picable
-  has_many :items
+  has_many :pics, :as => :picable, :dependent => :destroy
+  has_many :items, :dependent => :destroy
 
   attr_protected nil
 

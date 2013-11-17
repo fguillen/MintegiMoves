@@ -1,0 +1,29 @@
+<% title "All Categories" %>
+
+<div id="categories">
+  <p><%= link_to "New Category", :new_admin_category, :class => "btn btn-default" %></p>
+
+  <table class="table table-striped table-hover sortable">
+    <thead>
+      <tr>
+        <th class="col-lg-1"></th>
+        <th class="col-lg-1">Id</th>
+        <th class="col-lg-6">Title</th>
+        <th class="col-lg-2">Items</th>
+        <th class="col-lg-2">Created At</th>
+      </tr>
+    </thead>
+
+    <tbody data-update-url="<%= reorder_admin_categories_url %>">
+      <% @categories.each do |category| %>
+        <tr data-id="<%= category.id %>">
+          <td class="handle"><i class="icon-list"></i></td>
+          <td><%= link_to category.id, [:admin, category] %></td>
+          <td><%= link_to category.title, [:admin, category] %></td>
+          <td><%= link_to category.items.count, admin_items_path(:category_id => category.id) %></td>
+          <td><%= category.created_at.to_s(:datetimedb) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

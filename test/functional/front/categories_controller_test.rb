@@ -12,4 +12,15 @@ class Front::CategoriesControllerTest < ActionController::TestCase
     assert_template "front/categories/show"
     assert_equal(category, assigns(:category))
   end
+
+  def test_show_without_params
+    category_1 = FactoryGirl.create(:category, :position => 2)
+    category_2 = FactoryGirl.create(:category, :position => 1)
+
+    get :show
+
+    assert :success
+    assert_template "front/categories/show"
+    assert_equal(category_2, assigns(:category))
+  end
 end
