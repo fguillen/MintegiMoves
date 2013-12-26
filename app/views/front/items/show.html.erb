@@ -1,7 +1,7 @@
 <% title "Item > #{@item.title}" %>
 
-<div class="row">
-  <div class="col-md-4 item show">
+<div class="row item">
+  <div class="col-md-4 info">
     <h2 class="font_title"><%= @item.title %></h2>
     <div class="intro">
       <%= @item.intro.to_md %>
@@ -10,7 +10,7 @@
       <%= @item.text.to_md %>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 pics">
     <ul>
       <% @item.pics.by_position.each do |pic| %>
         <li>

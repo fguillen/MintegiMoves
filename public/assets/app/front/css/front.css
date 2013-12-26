@@ -104,13 +104,17 @@ content: "| ";
   font-size: 14px;
 }
 
-.item.show .intro {
+.item .info .intro {
   color: gray;
 }
 
 .item .text ul {
   list-style-type: disc;
   padding-left: 20px;
+}
+
+.item .pics li {
+  margin-bottom: 10px
 }
 
 /* map */
