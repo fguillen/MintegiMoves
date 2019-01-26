@@ -13,4 +13,6 @@ MintegiMoves::Application.configure do
   config.active_record.raise_in_transactional_callbacks = true
   config.action_mailer.delivery_method = :smtp
   config.log_level = :info
+  config.assets.enabled = false
+  config.serve_static_files = true
 end

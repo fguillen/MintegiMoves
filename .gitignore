@@ -19,7 +19,10 @@ coverage
 .DS_Store
 public/assets/uploads/
 /test/reports
-/config/app_config.yml
 .rvmrc
 /db/data
-
+.env
+.env.staging
+.env.production
+.env.development.local
+.env.*.local

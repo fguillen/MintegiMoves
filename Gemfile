@@ -1,8 +1,9 @@
 source "https://rubygems.org"
+ruby "2.5.1"
 
 gem "rails", "4.2.10"
 
-gem "sqlite3"
+gem "mysql2"
 gem "json"
 gem "paperclip"
 gem "exception_notification", "4.2.2"
@@ -21,13 +22,10 @@ gem 'activerecord-session_store'
 
 gem "puma"
 gem "faker"
+gem "dotenv-rails"
 
 group :development do
   gem "nifty-generators"
-end
-
-group :production do
-  gem "mysql2", "0.4.10"
 end
 
 group :test do
