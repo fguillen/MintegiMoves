@@ -20,10 +20,10 @@ gem "style_palette", :git => "git://github.com/fguillen/StylePalette.git"
 gem 'activerecord-session_store'
 
 gem "puma"
+gem "faker"
 
 group :development do
   gem "nifty-generators"
-  gem "faker"
 end
 
 group :production do
