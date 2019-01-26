@@ -20,7 +20,6 @@ coverage
 public/assets/uploads/
 /test/reports
 /config/app_config.yml
-/config/database.yml
 .rvmrc
-
+/db/data
 

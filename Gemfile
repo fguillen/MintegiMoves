@@ -12,11 +12,11 @@ gem "will_paginate"
 gem "will_paginate-bootstrap", :git => "https://github.com/mrfoto/will_paginate-bootstrap.git"
 gem "bluecloth"
 gem "authlogic"
-gem "ruby_regex", :git => "git@github.com:fguillen/ruby_regex.git"
+gem "ruby_regex", :git => "https://github.com/fguillen/ruby_regex.git"
 gem "lograge" # log cleaning
 gem "acts-as-taggable-on"
-gem "log_book", :git => "git@github.com:fguillen/LogBook.git", :ref => "046ede3"
-gem "style_palette", :git => "git://github.com/fguillen/StylePalette.git"
+gem "log_book", :git => "https://github.com/fguillen/LogBook.git", :ref => "046ede3"
+gem "style_palette", :git => "https://github.com/fguillen/StylePalette.git"
 gem 'activerecord-session_store'
 
 gem "puma"

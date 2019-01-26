@@ -1,11 +1,5 @@
 GIT
-  remote: git://github.com/fguillen/StylePalette.git
-  revision: 20e093c6c6259ca5cbe924d4097b5adbf16028e0
-  specs:
-    style_palette (0.0.8)
-
-GIT
-  remote: git@github.com:fguillen/LogBook.git
+  remote: https://github.com/fguillen/LogBook.git
   revision: 046ede30065426991a6ba93c1cb706df70973dc3
   ref: 046ede3
   specs:
@@ -14,7 +8,13 @@ GIT
       rails
 
 GIT
-  remote: git@github.com:fguillen/ruby_regex.git
+  remote: https://github.com/fguillen/StylePalette.git
+  revision: 20e093c6c6259ca5cbe924d4097b5adbf16028e0
+  specs:
+    style_palette (0.0.8)
+
+GIT
+  remote: https://github.com/fguillen/ruby_regex.git
   revision: c6ccf7a51b93f6ef6d783a35abf1ec0aa58d70d9
   specs:
     ruby_regex (0.1.1)
