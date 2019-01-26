@@ -9,6 +9,7 @@ class Admin::AdminUserSessionsControllerTest < ActionController::TestCase
 
   def test_create
     admin_user = FactoryGirl.create( :admin_user )
+
     post(
       :create,
       :admin_user_session => {

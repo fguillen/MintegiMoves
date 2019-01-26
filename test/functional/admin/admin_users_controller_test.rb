@@ -33,7 +33,12 @@ class Admin::AdminUsersControllerTest < ActionController::TestCase
   def test_create_invalid
     AdminUser.any_instance.stubs(:valid?).returns(false)
 
-    post :create
+    post(
+      :create,
+      :admin_user => {
+        :name => "Admin Wadus"
+      }
+    )
 
     assert_template "new"
     assert_not_nil(flash[:alert])
@@ -45,8 +50,8 @@ class Admin::AdminUsersControllerTest < ActionController::TestCase
       :admin_user => {
         :name => "Admin Wadus",
         :email => "email@email.com",
-        :password => "pass",
-        :password_confirmation => "pass"
+        :password => "password",
+        :password_confirmation => "password"
       }
     )
 
@@ -70,7 +75,13 @@ class Admin::AdminUsersControllerTest < ActionController::TestCase
     admin_user = FactoryGirl.create(:admin_user)
     AdminUser.any_instance.stubs(:valid?).returns(false)
 
-    put :update, :id => admin_user
+    put(
+      :update,
+      :id => admin_user,
+      :admin_user => {
+        :name => "Other Name"
+      }
+    )
 
     assert_template "edit"
     assert_not_nil(flash[:alert])

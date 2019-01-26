@@ -1,8 +1,10 @@
-if Rails.env.production? || Rails.env.staging?
-  MintegiMoves::Application.config.middleware.use(
-    ExceptionNotifier,
-    :email_prefix => "[MintegiMoves] ",
-    :sender_address => APP_CONFIG[:admin_email],
-    :exception_recipients => [APP_CONFIG[:admin_email]]
+if Rails.env.production?
+  Rails.application.config.middleware.use(
+    ExceptionNotification::Rack,
+    :email => {
+      :email_prefix => "[MintegiMoves] ",
+      :sender_address => '"Fernando Guillen" <fguillen.mail@gmail.com>',
+      :exception_recipients => "fguillen.mail@gmail.com"
+    }
   )
 end

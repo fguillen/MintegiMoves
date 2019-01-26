@@ -37,7 +37,7 @@ ActiveRecord::Base.transaction do
   end
 
   email = "admin@email.com"
-  password = "pass"
+  password = "password"
   admin_user =
     AdminUser.create!(
       :name => "Super Admin",

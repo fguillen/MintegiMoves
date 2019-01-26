@@ -33,7 +33,12 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
   def test_create_invalid
     Category.any_instance.stubs(:valid?).returns(false)
 
-    post :create
+    post(
+      :create,
+      :category => {
+        :title => "Category Title"
+      }
+    )
 
     assert_template "new"
     assert_not_nil(flash[:alert])
@@ -70,7 +75,13 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
     category = FactoryGirl.create(:category)
     Category.any_instance.stubs(:valid?).returns(false)
 
-    put :update, :id => category
+    put(
+      :update,
+      :id => category,
+      :category => {
+        :title => "Other Title"
+      }
+    )
 
     assert_template "edit"
     assert_not_nil(flash[:alert])

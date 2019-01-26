@@ -6,7 +6,7 @@ class Admin::AdminUserSessionsController < Admin::AdminController
   end
 
   def create
-    @admin_user_session = AdminUserSession.new(params[:admin_user_session])
+    @admin_user_session = AdminUserSession.new(admin_user_session_params.to_h)
 
     if @admin_user_session.save
       flash[:notice] = "Admin User authenticated!"
@@ -37,5 +37,11 @@ class Admin::AdminUserSessionsController < Admin::AdminController
     else
       redirect_to admin_forgot_password_path, :alert => "We can't find the email '#{params[:admin_user_session][:email]}'"
     end
+  end
+
+  private
+
+  def admin_user_session_params
+    params.require(:admin_user_session).permit!
   end
 end

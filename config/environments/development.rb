@@ -5,9 +5,13 @@ MintegiMoves::Application.configure do
   config.action_controller.perform_caching = false
   config.active_support.deprecation = :log
   config.action_dispatch.best_standards_support = :builtin
-  config.active_record.mass_assignment_sanitizer = :strict
-  config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # lograge
   config.lograge.enabled = false
+
+  config.eager_load = false
+  config.active_record.raise_in_transactional_callbacks = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = false
+  config.action_mailer.raise_delivery_errors = true
 end

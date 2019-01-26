@@ -5,8 +5,6 @@ class Item < ActiveRecord::Base
   has_many :pics, :as => :picable, :dependent => :destroy
   belongs_to :category
 
-  attr_protected nil
-
   before_validation :initialize_position
 
   validates :title, :presence => true
@@ -15,7 +13,7 @@ class Item < ActiveRecord::Base
   validates :position, :presence => true
   validates :category_id, :presence => true
 
-  scope :by_position, order("position asc")
+  scope :by_position, -> { order("position asc") }
 
   def initialize_position
     self.position ||= Item.minimum(:position).to_i - 1

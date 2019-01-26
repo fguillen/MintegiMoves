@@ -51,7 +51,12 @@ class Admin::ItemsControllerTest < ActionController::TestCase
   def test_create_invalid
     Item.any_instance.stubs(:valid?).returns(false)
 
-    post :create
+    post(
+      :create,
+      :item => {
+        :title => "Item Title"
+      }
+    )
 
     assert_template "new"
     assert_not_nil(flash[:alert])
@@ -91,7 +96,13 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     item = FactoryGirl.create(:item)
     Item.any_instance.stubs(:valid?).returns(false)
 
-    put :update, :id => item
+    put(
+      :update,
+      :id => item,
+      :item => {
+        :title => "Other Title"
+      }
+    )
 
     assert_template "edit"
     assert_not_nil(flash[:alert])

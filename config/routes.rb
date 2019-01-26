@@ -11,12 +11,12 @@ MintegiMoves::Application.routes.draw do
   namespace :admin do
     root :to => "items#index"
 
-    match "login" => "admin_user_sessions#new", :as => :login
-    match "logout" => "admin_user_sessions#destroy", :as => :logout
-    match "forgot_password" => "admin_user_sessions#forgot_password", :as => :forgot_password, :via => :get
-    match "forgot_password" => "admin_user_sessions#forgot_password_send_email", :as => :forgot_password, :via => :post
-    match "reset_password/:reset_password_code" => "admin_users#reset_password", :as => :reset_password, :via => :get
-    match "reset_password/:reset_password_code" => "admin_users#reset_password_submit", :as => :reset_password, :via => :put
+    get "login" => "admin_user_sessions#new", :as => :login
+    get "logout" => "admin_user_sessions#destroy", :as => :logout
+    get "forgot_password" => "admin_user_sessions#forgot_password", :as => :forgot_password
+    post "forgot_password" => "admin_user_sessions#forgot_password_send_email", :as => :forgot_password_send
+    get "reset_password/:reset_password_code" => "admin_users#reset_password", :as => :reset_password
+    put "reset_password/:reset_password_code" => "admin_users#reset_password_submit", :as => :reset_password_send
     resources :admin_user_sessions, :only => [:new, :create, :destroy]
 
     resources :log_book_events, :only => [:index]

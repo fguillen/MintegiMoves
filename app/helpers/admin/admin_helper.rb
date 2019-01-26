@@ -3,9 +3,9 @@ module Admin::AdminHelper
 
   def twitterized_type(type)
     case type
-      when :alert
+      when "alert"
         "alert alert-danger"
-      when :notice
+      when "notice"
         "alert alert-success"
       else
         type.to_s

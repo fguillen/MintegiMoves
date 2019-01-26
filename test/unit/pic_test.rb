@@ -30,7 +30,7 @@ class PicTest < ActiveSupport::TestCase
     assert_equal("pic", pic.title)
 
     pic = FactoryGirl.create(:pic, :attach => File.open(fixture("_pic.jpg")))
-    assert_equal(nil, pic.title)
+    assert_nil(pic.title)
 
     pic = FactoryGirl.create(:pic, :attach => File.open(fixture("Pic With Spaces.jpg")))
     assert_equal("Pic With Spaces", pic.title)

@@ -2,8 +2,8 @@ FactoryGirl.define do
   factory :admin_user do
     sequence(:name) { |n| "AdminUser Name #{n}" }
     sequence(:email) { |n| "email#{n}@email.com" }
-    password "pass"
-    password_confirmation "pass"
+    password "password"
+    password_confirmation "password"
   end
 
   factory :item do
@@ -24,6 +24,6 @@ FactoryGirl.define do
   end
 
   factory :log_book_event, :class => LogBook::Event  do
-    text "Wadus Event"
+    differences "Wadus Event"
   end
 end

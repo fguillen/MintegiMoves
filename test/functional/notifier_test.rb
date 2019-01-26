@@ -5,7 +5,7 @@ class NotifierTest < ActionMailer::TestCase
     admin_user = FactoryGirl.create(:admin_user, :email => "reset_password_admin@email.com")
     admin_user.perishable_token = "PERISHABLE-TOKEN"
 
-    email = Notifier.admin_user_reset_password(admin_user).deliver
+    email = Notifier.admin_user_reset_password(admin_user).deliver_now
     assert !ActionMailer::Base.deliveries.empty?
 
     assert_equal ["mintegi_moves.mail@email.com"], email.from

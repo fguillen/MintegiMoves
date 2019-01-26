@@ -14,7 +14,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def create
-    @category = Category.new(params[:category])
+    @category = Category.new(category_params)
     @category.log_book_historian = current_admin_user
     if @category.save
       redirect_to [:admin, @category], :notice => "Successfully created Category."
@@ -29,7 +29,7 @@ class Admin::CategoriesController < Admin::AdminController
 
   def update
     @category.log_book_historian = current_admin_user
-    if @category.update_attributes(params[:category])
+    if @category.update_attributes(category_params)
       redirect_to [:admin, @category], :notice  => "Successfully updated Category."
     else
       flash.now[:alert] = "Some error trying to update Category."
@@ -58,5 +58,9 @@ private
 
   def load_category
     @category = Category.find(params[:id])
+  end
+
+  def category_params
+    params.require(:category).permit!
   end
 end

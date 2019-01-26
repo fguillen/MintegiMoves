@@ -10,7 +10,7 @@ class AdminUserTest < ActiveSupport::TestCase
     old_perishable_token = admin_user.perishable_token
 
     mailer = mock
-    mailer.expects(:deliver)
+    mailer.expects(:deliver_now)
     Notifier.expects(:admin_user_reset_password).with(admin_user).returns(mailer)
 
     admin_user.send_reset_password_email

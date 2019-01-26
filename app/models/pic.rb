@@ -1,5 +1,4 @@
 class Pic < ActiveRecord::Base
-  attr_protected nil
   belongs_to :picable, :polymorphic => true
 
   before_validation :initialize_position
@@ -9,7 +8,7 @@ class Pic < ActiveRecord::Base
   validates :picable_type, :presence => true
   validates :position, :presence => true
 
-  scope :by_position, order("position asc")
+  scope :by_position, -> { order("position asc") }
 
   ATTACH_STYLES = {
     :front => "215x",
@@ -37,6 +36,7 @@ class Pic < ActiveRecord::Base
     )
   end
 
+  validates_attachment_content_type :attach, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def initialize_position
     self.position ||= Pic.minimum(:position).to_i - 1
